@@ -1,5 +1,4 @@
 import math
-import world.position_calc3 as position_calc2
 
 
 def get_distance(a_x, a_y, b_x, b_y):
@@ -56,16 +55,3 @@ def pos_update(pos_x, pos_y, course, step, size_x, size_y):
         pos_y = size_y
         
     return pos_x, pos_y
-
-# TODO: uncomplete
-def sector_jugement(o_x, o_y, course, sector_angle, e_x, e_y, radius):
-    # print(o_x, o_y, course, sector_angle, e_x, e_y, radius)
-    # angle = angle_cal(o_x, o_y, e_x, e_y)
-    # distance = get_distance(o_x, o_y, e_x, e_y)
-    # if angle < course+sector_angle/2 and angle > course-sector_angle/2 and distance <= radius:
-    #     print("True")
-    # else:
-    #     print("False")
-    # print("#############################")
-    # print(position_calc2.sector_jugement(o_x, o_y, course, sector_angle, e_x, e_y, radius))
-    return position_calc2.sector_jugement(o_x, o_y, course, sector_angle, e_x, e_y, radius)

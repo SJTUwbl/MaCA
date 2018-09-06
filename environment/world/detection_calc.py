@@ -1,7 +1,6 @@
 import copy
 import world.config as config
 import world.position_calc as position_calc
-import world.detection_calc3 as detection_calc3
 
 
 def passive_detection_calc(self_context, enemy_fighter_context_list):
@@ -120,6 +119,5 @@ def under_jam_check(rader_x, radar_y, radar_band, jammer_x, jammer_y, jammer_cou
     :return: True：处于干扰范围, False: 不处于干扰范围
     '''
     print('under_jam_check')
-    result = detection_calc3.under_jam_check(rader_x, radar_y, radar_band, jammer_x, jammer_y, jammer_course)
-    print(result)
+    result = null
     return result

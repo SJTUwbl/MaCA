@@ -12,7 +12,7 @@ pyarmor_runtime()
 """
 
 import importlib
-from world.em_battle2 import BattleField
+from world.em_battle import BattleField
 from world.replay import Replay
 from world.load_map import Map
 import world.position_calc as position_calc

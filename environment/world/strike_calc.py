@@ -2,7 +2,6 @@ import random
 import copy
 import world.position_calc
 import configuration.system as system_config
-import world.strike_calc3 as strike_calc3
 import world.position_calc as position_calc
 import world.config as config
 
