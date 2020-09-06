@@ -151,8 +151,6 @@ class BattleField:
             else:
                 self.side1_detector_action.append(action.copy())
 
-        # self.env = BF(size_x, size_y, o_detector_list, o_fighter_list, e_detector_list, e_fighter_list, max_step=1000, render=True, render_interval=1, random_pos=self.random_pos, log=False, random_seed=-1)
-
     def get_alive_status(self, o_detector_status_list, o_fighter_status_list, e_detector_status_list, e_fighter_status_list):
         
         side1_detector_alive_num = 0
@@ -285,8 +283,6 @@ class BattleField:
         return (side1_detector_obs_list, side1_fighter_obs_list, side1_joint_obs_list, side2_detector_obs_list, side2_fighter_obs_list, side2_joint_obs_list)
 
     def get_reward(self):
-        # result = self.env.get_reward()
-        # return result
         # TODO: uncomplete
         return self.get_reward_list()
    
@@ -296,7 +292,6 @@ class BattleField:
         :return:o_detector_reward：o方预警机动作回报，o_fighter_reward：o方战机动作回报，o_game_reward，o方输赢回报
                 e_detector_reward：e方预警机动作回报，e_fighter_reward：e方战机动作回报，e_game_reward，e方输赢回报
         '''
-        # return self.env.get_reward_list()
         return self.o_detector_reward, self.o_fighter_reward, self.o_game_reward, \
         self.e_detector_reward, self.e_fighter_reward, self.e_game_reward
    
@@ -469,6 +464,7 @@ class BattleField:
 
         # update strike list
         for index in range(self.o_fighter_num):
+            print(side1_fighter_action[index])
             if self.o_fighter_status_list[index]['alive'] and side1_fighter_action[index]['hit_target']:
                 target_id = side1_fighter_action[index]['hit_target']
                 missile_type = side1_fighter_action[index]['missile_type']

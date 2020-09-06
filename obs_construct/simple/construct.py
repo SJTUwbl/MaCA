@@ -10,6 +10,7 @@ class ObsConstruct:
         self.img_obs_reduce_ratio = 10
 
     def obs_construct(self, obs_raw_dict):
+        print("obs_construct")
         obs_dict = {}
         detector_obs_list = []
         fighter_obs_list = []
@@ -39,6 +40,7 @@ class ObsConstruct:
         return obs_dict
 
     def __get_alive_status(self,detector_data_obs_list,fighter_data_obs_list):
+        print("__get_alive_status")
         alive_status = np.full((self.detector_num+self.fighter_num,1),True)
         for x in range(self.detector_num):
             if not detector_data_obs_list[x]['alive']:
@@ -49,6 +51,7 @@ class ObsConstruct:
         return alive_status
 
     def __get_img_obs(self, detector_data_obs_list, fighter_data_obs_list, joint_data_obs_dict):
+        print("__get_img_obs")
         img_obs_size_x = int(self.battlefield_size_y / self.img_obs_reduce_ratio)
         img_obs_size_y = int(self.battlefield_size_x / self.img_obs_reduce_ratio)
         # 个体img：所有己方单位位置
@@ -167,6 +170,7 @@ class ObsConstruct:
         return detector_img, fighter_img, joint_img
 
     def __set_value_in_img(self, img, pos_x, pos_y, value):
+        print("__set_value_in_img")
         """
         draw 3*3 rectangle in img
         :param img:
@@ -206,6 +210,7 @@ class ObsConstruct:
             img[pos_x - 1: pos_x + 2, pos_y - 1: pos_y + 2] = value
 
     def __get_data_obs(self, detector_data_obs_list, fighter_data_obs_list, joint_data_obs_dict):
+        print("__get_data_obs")
         detector_data = np.full((self.detector_num, 1), -1, dtype=np.int32)
         fighter_data = np.full((self.fighter_num, 3), -1, dtype=np.int32)
 
